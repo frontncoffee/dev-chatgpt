@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-btn {
+    display: none; /* Esconde o botão do menu em telas maiores que 600px */
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    overflow: hidden; /* Adicionado para esconder o menu quando recolhido */
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease-in-out; /* Adicionado para a animação de transição */
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilos para telas menores que 600px (smartphones) */
+@media only screen and (max-width: 600px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: -90%; /* Alterado para -90% para ficar recolhido para fora da tela */
+        width: 90%;
+        background-color: #333;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease-in-out; /* Adicionado para a animação de transição */
+    }
+
+    .nav.active {
+        right: 0;
+    }
+}
